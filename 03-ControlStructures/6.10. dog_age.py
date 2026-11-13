@@ -6,10 +6,10 @@
 Age = float(input("Please enter dog's age in human years: "))
 
 if Age > 2:
-    Age_above_2 = 10.5 
-    print("The dog's age in dogs years is: " f'{Age_above_2 + (Age-2)*4}'"years." )
+    Age_above_2 = 21 
+    print("The dog's age in dogs years is: " f'{Age_above_2 + (Age-2)*4}'" years." )
 elif Age == 2: 
-    print("The dog's age in dogs years is: 10.5 years")
+    print("The dog's age in dogs years is: 21 years")
 elif Age < 2:
-    Age_above_2 = 10.5 
+    Age_above_2 = 21 
     print("The dog's age in dogs years is: "f'{Age_above_2 * Age / 2 :.2f}')
