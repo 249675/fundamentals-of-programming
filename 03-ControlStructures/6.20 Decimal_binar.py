@@ -13,8 +13,8 @@
 x = int(input("Enter decimal number: "))
 binary = '' #puste
 while x >0 : # sprawdza czy wieksze od 0
-   y = x % 2 # robimy nowa zmienna z reszty i przechowujemy ja w y. Później (str(y)) robi z tego tekst i leci druk
-   x = x // 2 # dzielimy x całkowicie i wracamy do góry pętli do binary i sprawdzamy czy x>0
+   y = x % 2 # oblicza resztę z dzielenia przez 2 i zapisuje ją w y
+   x = x // 2 # dzieli x przez 2 całkowitoliczbowo i zapisuje wynik w x
    binary = str(y) + binary  # zamienia resztę na tekst i dopisuje ją z przodu wyniku
 
 print(binary)

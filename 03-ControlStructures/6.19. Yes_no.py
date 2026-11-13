@@ -8,7 +8,7 @@
 #Playing computer games: No
 #Has an Instagram account: Yes
 
-science = input("Are you interested in computer science?(y/n): ")  == 'y'
+science = input("Are you interested in computer science?(y/n): ")  == 'y' #dla y robi True
 games = input("Do you like playing computer games? (y/n): ") == 'y'
 instagram = input("Do you have an Instagram account? (y/n): ") == 'y'
 

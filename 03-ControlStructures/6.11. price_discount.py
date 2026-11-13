@@ -18,3 +18,5 @@ reduce = (previous_price - current_price)/previous_price * 100
 if reduce >= 10:
     print("Buy the product!")
     print( f'Product price reduced by {reduce}%') 
+else:
+    print(f'Wait for better discount. Current discount: {reduce}')

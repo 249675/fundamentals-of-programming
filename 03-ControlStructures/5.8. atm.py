@@ -36,7 +36,7 @@ while True:
         current_pin = input("Enter your current PIN: ")
         if current_pin != pin:
             print("Incorrect PIN.")
-            continue
+            continue #leci dalej
         new_PIN = (input("Please enter your new PIN: "))
         if (len(new_PIN) == 4 and new_PIN.isdigit()):
             pin = new_PIN

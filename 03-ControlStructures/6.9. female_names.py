@@ -2,7 +2,7 @@
 #Anna -- Polish female name
 
 Name = str(input("Please enter name:"))
-if Name[-1] == "a":
+if Name[-1] == "a": #ostatni znak imienia
     print(f'{Name} is most likely female name.')
 else:
     print(f'{Name} is most likely male name.')    

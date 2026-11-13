@@ -8,7 +8,7 @@ number = 5 #number of products
 price = 40 #product price
 
 if number >= 2:
-    disc_price = (2 * price) + (number - 2) * price * 0.75 
+    disc_price = (2 * price) + (number - 2) * price * 0.75 #tylko to powyżej 2 sztuk z znizka 25%. Pierwsze dwie sztuki nromalna cena
     print(disc_price)
 elif number <= 2:
     print(number * price)

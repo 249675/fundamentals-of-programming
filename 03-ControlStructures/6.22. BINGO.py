@@ -2,8 +2,8 @@
 
 #1 2 THREE 4 FIVE THREE 7 ...
 
-for x in range (1,31):
-    if x % 3 == 0 and  x % 5 == 0:
+for x in range (1,31): 
+    if x % 3 == 0 and  x % 5 == 0: 
         print('BINGO', end=' ')
     elif x % 3 == 0:
         print ("THREE", end=' ') 
