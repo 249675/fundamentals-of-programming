@@ -9,7 +9,7 @@ user_guess = 0
 
 print("Guess the number between 1 and 100!")
 
-while user_guess != number_to_guess:
+while user_guess != number_to_guess: #pętla ciągła aż trafimy w wynik
     user_guess = int(input("Enter your guess: "))
 
     if user_guess < number_to_guess:

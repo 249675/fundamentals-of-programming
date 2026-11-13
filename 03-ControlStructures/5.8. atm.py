@@ -14,7 +14,7 @@ while True:
     print("5. Change your PIN")
     print("6. Exit")
 
-    choice = input("Choose an option (1-4): ")
+    choice = input("Choose an option (1-6): ")
     print()
 
     if choice == '1':

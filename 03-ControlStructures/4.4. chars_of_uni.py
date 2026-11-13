@@ -8,7 +8,7 @@ university = 'Krakow University of Economics'
 university_expanded = ''
 
 for char in university:
-    university_expanded = university_expanded + char + ' '
+    university_expanded = university_expanded + char + ' ' #university expanded najpierw puste. po spelnienu warunku for dajemy char + spacje
 
 print(university) # original university name
 print(university_expanded) # expanded university name
