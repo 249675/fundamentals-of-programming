@@ -8,9 +8,9 @@ array = [
     [8, 7, 1, 1, 5],
 ]
 
-last_column_sum = 0
+last_column_sum = 0  # Zaczynamy sumowanie od zera.
 
-for row in array:
-    last_column_sum += row[-1]
+for row in array: # Pobieramy po kolei każdy wiersz.
+    last_column_sum += row[-1] # Pobieramy ostatnią liczbę z bieżącego wiersza i dodajemy ją do sumy.
 
 print("Sum of the last column:", last_column_sum)

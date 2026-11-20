@@ -4,16 +4,16 @@
 # Sample result: [2, 4, 6, 7, 9, 5]
 
 numbers = [7, 9, 2, 4, 5, 6]
-even_numbers = []
-odd_numbers = []
+even_numbers = [] # Pusta lista na liczby parzyste.
+odd_numbers = [] # Pusta lista na liczby nieparzyste.
 
-print("arr =", numbers)
+print("arr =", numbers) # Wyświetlamy listę w pierwotnej kolejności.
 
-for number in numbers:
+for number in numbers: # Pobieramy po kolei każdą liczbę z listy.
     if number % 2 == 0:
-        even_numbers.append(number)
+        even_numbers = even_numbers + [number]  # Dołączamy ją do listy liczb parzystych.
     else:
-        odd_numbers.append(number)
+        odd_numbers = odd_numbers + [number]  # Dołączamy ją do listy liczb nieparzystych.
 
-numbers = even_numbers + odd_numbers
-print("arr =", numbers)
+numbers = even_numbers + odd_numbers  # Łączymy listy, zaczynając od liczb parzystych.
+print("arr =", numbers)  # Wyświetlamy wynik.

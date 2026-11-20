@@ -15,5 +15,7 @@ matrix = [
 for i in range (3): # Zmienna i przyjmuje kolejno wartości 0, 1 i 2.
     matrix[i][i] = 1  # Ustawiamy 1 tam, gdzie indeks wiersza i kolumny jest taki sam.
 
-for row in matrix: # Pobieramy kolejno każdy wiersz macierzy.
-    print(*row) # Gwiazdka przekazuje elementy wiersza osobno do print().
+for row in matrix:  # Pobieramy kolejno każdy wiersz macierzy.
+    for value in row:  # Pobieramy każdą wartość z bieżącego wiersza.
+        print(value, end=" ")  # Wyświetlamy wartość i spację w tym samym wierszu.
+    print()  # Po wypisaniu całego wiersza przechodzimy do następnej linii.

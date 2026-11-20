@@ -8,13 +8,17 @@ array = [
     [5, 4, 3, 2, 1],
 ]
 
-print("Before:")
-for row in array:
-    print(*row)
+print("Before:")  # Wyświetlamy tablicę przed zamianą.
+for row in array:  # Pobieramy po kolei każdy wiersz.
+    for number in row:  # Pobieramy kolejne liczby z bieżącego wiersza.
+        print(number, end=" ")  # Wypisujemy liczbę i spację w tym samym wierszu.
+    print()  # Po wypisaniu całego wiersza przechodzimy do następnej linii.
 
-for row in array:
-    row[0], row[-1] = row[-1], row[0]
+for row in array:  # Zamianę wykonujemy osobno w każdym wierszu.
+    row[0], row[-1] = row[-1], row[0]  # Zamieniamy pierwszą i ostatnią liczbę miejscami.
 
-print("After:")
+print("After:")  # Wyświetlamy tablicę po zamianie.
 for row in array:
-    print(*row)
+    for number in row:
+        print(number, end=" ")
+    print()

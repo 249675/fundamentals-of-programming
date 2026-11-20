@@ -9,12 +9,19 @@ from MyArrays import difference, median, min_max, numbers_as_string, second_larg
 
 
 numbers = [7, 3, 8, 5, 2]
-smallest, largest = min_max(numbers)
+smallest, largest = min_max(numbers) # Pobieramy minimum i maksimum.
 
-print("Numbers: ", end="")
-print(*numbers, sep=",")
-print("Second largest number:", second_largest(numbers))
-print("Difference between largest and smallest:", difference(numbers))
-print("Median:", median(numbers))
-print(f"Smallest and largest number: {smallest},{largest}")
-print("Numbers as a string:", numbers_as_string(numbers))
+print("Numbers: ", end="")  # Wypisujemy etykietę i zostajemy w tym samym wierszu.
+index = 0
+for number in numbers:
+    if index > 0:
+        print(",", end="")  # Wypisujemy przecinek przed każdą liczbą poza pierwszą.
+    print(number, end="")  # Wypisujemy liczbę w tym samym wierszu.
+    index += 1
+print()  # Po wszystkich liczbach przechodzimy do nowego wiersza.
+
+print("Second largest number:", second_largest(numbers))  
+print("Difference between largest and smallest:", difference(numbers))  
+print("Median:", median(numbers))  
+print(f"Smallest and largest number: {smallest},{largest}")  
+print("Numbers as a string:", numbers_as_string(numbers)) 

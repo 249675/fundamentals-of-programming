@@ -6,5 +6,7 @@ array = [
     [9, 1, 4, 7],
 ]
 
-for row in array:
-    print(*row)
+for row in array:  # Pobieramy po kolei każdy wiersz.
+    for number in row:  # Przechodzimy po liczbach w bieżącym wierszu.
+        print(number, end=" ")  # Wypisujemy liczbę i spację w tym samym wierszu.
+    print()  # Po wypisaniu wszystkich liczb przechodzimy do nowego wiersza.

@@ -6,3 +6,5 @@
 word = ("computation",)
 
 print(type(word))
+
+#W jednoelementowej krotce przecinek po elemencie jest potrzebny. Same nawiasy w ("computation") zostawiają zwykły tekst typu str. Z przecinkiem, czyli ("computation",), Python tworzy krotkę.
