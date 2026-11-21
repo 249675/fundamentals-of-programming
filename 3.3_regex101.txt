@@ -1,0 +1,19 @@
+W Regex101 wybierz Python i wklej tekst z polecenia. Testuj wzorce osobno.
+
+Daty z rokiem
+\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},\s+\d{4}\b
+
+Numery telefonów
+\b\d{3}-\d{3}-\d{4}\b
+
+Liczby z separatorami tysięcy
+\b\d{1,3}(?:,\d{3})+\b
+
+Imiona z podanego tekstu
+\b(?:Alice|John|Mike)\b
+
+Samodzielne liczby całkowite, bez fragmentów telefonów i formatów z separatorem tysięcy
+(?<![\w,-])\d+(?![\w-]|,\d)
+
+Wzorzec imion korzysta z listy z przykładu. Sama wielka litera wychwyciłaby też miesiące i początki zdań.
+Daty z rokiem nie obejmują December 25, ponieważ w tekście po tej dacie brakuje roku.
