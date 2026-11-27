@@ -17,44 +17,30 @@ import re # Importujemy moduł do wyszukiwania tekstu za pomocą wzorców.
 
 
 def email_sender(message):
-    # Szukamy nagłówka From i pobieramy adres z nawiasów ostrych.
+    # Szukamy początku wiersza z napisem From:.
+    # [^\n<]* pomija tekst przed znakiem <, np. imię i nazwisko.
+    # ([^>\n]+) przechwytuje adres aż do znaku > lub końca wiersza.
     match = re.search(r"^From:[^\n<]*<([^>\n]+)>", message, re.MULTILINE)
     return match.group(1) if match else "" 
 
 
 def email_recipient(message):
-    # Szukamy wiersza zaczynającego się od To: i przechwytujemy adres odbiorcy.
+    # Działa tak samo jak email_sender, ale szukamy wiersza To:.
     match = re.search(r"^To:[^\n<]*<([^>\n]+)>", message, re.MULTILINE)
     return match.group(1) if match else ""
 
 
 def email_subject(message):
-    # Po Subject: pomijamy spacje i przechwytujemy temat do końca wiersza.
+    # Szukamy początku wiersza z napisem Subject:.
+    # ␣* (zwykła spacja i gwiazdka) pomija spacje po dwukropku.
+    # ([^\n]*) przechwytuje resztę wiersza, czyli temat wiadomości.
     match = re.search(r"^Subject: *([^\n]*)", message, re.MULTILINE)
     return match.group(1) if match else ""
 
 
 def email_body(message):
-    # Treść zaczyna się po pierwszej pustej linii.
-    # Dwa znaki \n oddzielają nagłówki od treści wiadomości.
-    # DOTALL pozwala kropce dopasować również znaki nowej linii w treści.
+    # \n\n to dwa znaki nowej linii, które tworzą pusty wiersz.
+    # (.*) przechwytuje wszystko po tej przerwie.
+    # Dzięki re.DOTALL kropka obejmuje też kolejne znaki nowej linii.
     match = re.search(r"\n\n(.*)", message, re.DOTALL)
     return match.group(1) if match else ""
-
-# Wzorzec szuka adresu nadawcy w wierszu takim jak:
-# From: Jan Kowalski <jan.kowalski@example.com>
-#
-# 1. Prefiks r przekazuje zapis \n do modułu re jako część wzorca.
-#    W samym wyrażeniu regularnym \n oznacza znak nowej linii.
-# 2. ^From: szuka tekstu „From:” na początku wiersza.
-#    re.MULTILINE sprawia, że ^ działa na początku każdego wiersza wiadomości.
-# 3. [^\n<]* dopasowuje zero lub więcej znaków innych niż \n i <.
-#    W przykładzie ten fragment obejmuje spację, imię, nazwisko i kolejną spację.
-# 4. < dopasowuje znak otwierający przed adresem.
-# 5. ([^>\n]+) przechwytuje adres. Znak + wymaga co najmniej jednego znaku,
-#    a [^>\n] pozwala czytać dalej aż do > lub końca wiersza.
-# 6. > dopasowuje znak zamykający po adresie.
-# 7. Jeśli znaleziono dopasowanie, match.group(1) zwraca tekst z nawiasów (),
-#    czyli „jan.kowalski@example.com”. Przy braku dopasowania match to None.
-#
-# Używamy zwykłego * po [^\n<]. Zapis \* szukałby dosłownej gwiazdki.

@@ -1,4 +1,5 @@
-#A dictionary contains course names along with the number of hours. Write a program that calculates and prints the total number of hours. Sample results:
+#A dictionary contains course names along with the number of hours. Write a program that calculates and prints the total number of hours.
+#  Sample results:
 
 winter_semester = {"math": 60, "programming": 30, "history": 15}
 
